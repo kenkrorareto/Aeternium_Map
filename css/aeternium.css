@@ -1,0 +1,33 @@
+body {
+    background: linear-gradient(to right, #430152, #973e03);
+    margin-top: 2em;
+}
+
+#map {
+    width: 80%;
+    height: 1500px;
+    margin: 0 auto;
+    border: 2px solid #000;
+    background-color: transparent;
+}
+
+.leaflet-marker-icon {
+    border: none !important;
+    /* Remove the border */
+    box-shadow: none !important;
+    /* Remove any shadow */
+}
+
+.leaflet-pane.leaflet-shadow-pane {
+    display: none;
+}
+
+@media only screen and (max-width: 900px) {
+    img {
+        max-width: 70%;
+    }
+
+    h1 {
+        font-size: 3vh;
+    }
+}

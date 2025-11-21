@@ -2,18 +2,42 @@
     "points": [
         {
             "loc": [
-                624,
-                857
+                2200,
+                1440
             ],
-            "link": "Sesión 1",
+            "link": "Caenanis",
             "tooltip": "hover"
         },
         {
             "loc": [
-                657,
-                878.5
+                3117.4375,
+                3046
             ],
-            "link": "Sesión 2",
+            "link": "Mesferei",
+            "tooltip": "hover"
+        },
+        {
+            "loc": [
+                3192,
+                4296
+            ],
+            "link": "Zultrenen",
+            "tooltip": "hover"
+        },
+        {
+            "loc": [
+                3088,
+                3392
+            ],
+            "link": "Götömilral",
+            "tooltip": "hover"
+        },
+        {
+            "loc": [
+                1584,
+                1560
+            ],
+            "link": "Virsuces",
             "tooltip": "hover"
         }
     ],
