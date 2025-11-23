@@ -40,17 +40,5 @@
             "link": "Virsuces",
             "tooltip": "hover"
         }
-    ],
-    "lines": [
-        {
-            "start": [
-                624,
-                857
-            ],
-            "end": [
-                657,
-                878.5
-            ]
-        }
     ]
 }

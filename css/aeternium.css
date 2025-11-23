@@ -13,13 +13,42 @@ body {
 
 .leaflet-marker-icon {
     border: none !important;
-    /* Remove the border */
     box-shadow: none !important;
-    /* Remove any shadow */
 }
 
 .leaflet-pane.leaflet-shadow-pane {
     display: none;
+}
+
+.map-selector {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.map-selector button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 3px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.map-selector button:hover {
+    background-color: #45a049;
+}
+
+.map-selector button.active {
+    background-color: #2E7D32;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 900px) {
