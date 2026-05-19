@@ -74,13 +74,13 @@ function loadMap(mapName) {
                 // Pin de ciudad generado por código: SVG nítido y escalable
                 var cityIcon = L.divIcon({
                     className: 'city-marker',
-                    html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38" viewBox="0 0 28 38">' +
-                        '<path d="M14,1 C7,1 1.5,6.5 1.5,13.5 C1.5,23 14,37 14,37 C14,37 26.5,23 26.5,13.5 C26.5,6.5 21,1 14,1 Z" ' +
-                        'fill="#e8b54a" stroke="#3a1206" stroke-width="1.5"/>' +
-                        '<circle cx="14" cy="13.5" r="5" fill="#2a0730"/></svg>',
-                    iconSize: [28, 38],
-                    iconAnchor: [14, 37],
-                    tooltipAnchor: [0, 1]
+                    html: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="34" viewBox="0 0 24 34">' +
+                        '<path d="M12,1 C6,1 1.5,5.5 1.5,11.5 C1.5,20 12,33 12,33 C12,33 22.5,20 22.5,11.5 C22.5,5.5 18,1 12,1 Z" ' +
+                        'fill="#e8b54a" stroke="#2a0730" stroke-width="2"/>' +
+                        '<circle cx="12" cy="11.5" r="4" fill="#2a0730"/></svg>',
+                    iconSize: [24, 34],
+                    iconAnchor: [12, 33],
+                    tooltipAnchor: [0, -32]
                 });
 
                 data.points.forEach(function (marker) {
@@ -88,13 +88,13 @@ function loadMap(mapName) {
                     var leafletMarker = L.marker(latLng, { icon: cityIcon }).addTo(map);
                     currentMarkers.push(leafletMarker);
 
-                    // Nombre de la ciudad: etiqueta permanente y siempre legible
+                    // Nombre de la ciudad: solo al pasar el ratón (no tapa el mapa)
                     if (marker.link) {
                         leafletMarker.bindTooltip(marker.link, {
-                            permanent: true,
-                            direction: 'bottom',
+                            permanent: false,
+                            direction: 'top',
                             className: 'city-label',
-                            offset: [0, 6]
+                            offset: [0, 0]
                         });
                     }
                 });

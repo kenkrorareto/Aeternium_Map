@@ -145,7 +145,7 @@ body {
 .leaflet-marker-icon {
     border: none !important;
     box-shadow: none !important;
-    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.55));
     transition: filter 0.2s ease;
 }
 
@@ -171,42 +171,41 @@ body {
     display: none;
 }
 
-/* Tooltips temáticos */
+/* Tooltip del nombre: máximo contraste y legibilidad */
 .leaflet-tooltip {
-    background: linear-gradient(135deg, #2a0730, #3a1206);
-    color: var(--parchment);
-    border: 1px solid rgba(240, 198, 116, 0.5);
+    background: #1b0a16;
+    color: #f8ead0;
+    border: 1px solid rgba(240, 198, 116, 0.55);
     border-radius: 4px;
-    padding: 6px 13px;
-    font-family: 'Cinzel', Georgia, serif;
-    font-size: 0.88rem;
+    padding: 5px 11px;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 0.95rem;
     font-weight: 600;
-    letter-spacing: 0.05em;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    text-shadow: none;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.55);
 }
 
-/* Etiqueta permanente con el nombre de la ciudad */
+/* Etiqueta del nombre de la ciudad (aparece al pasar el ratón) */
 .leaflet-tooltip.city-label {
-    font-size: 0.82rem;
-    font-weight: 600;
-    padding: 4px 11px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+    text-shadow: none;
 }
 
 .leaflet-tooltip-top::before {
-    border-top-color: #3a1206;
+    border-top-color: #1b0a16;
 }
 
 .leaflet-tooltip-bottom::before {
-    border-bottom-color: #2a0730;
+    border-bottom-color: #1b0a16;
 }
 
 .leaflet-tooltip-left::before {
-    border-left-color: #321031;
+    border-left-color: #1b0a16;
 }
 
 .leaflet-tooltip-right::before {
-    border-right-color: #321031;
+    border-right-color: #1b0a16;
 }
 
 /* Controles de zoom y atribución a juego */
