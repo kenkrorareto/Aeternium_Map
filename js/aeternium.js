@@ -71,20 +71,30 @@ function loadMap(mapName) {
         .then(response => response.json())
         .then(data => {
             if (Array.isArray(data.points)) {
+                // Pin de ciudad generado por código: SVG nítido y escalable
+                var cityIcon = L.divIcon({
+                    className: 'city-marker',
+                    html: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="38" viewBox="0 0 28 38">' +
+                        '<path d="M14,1 C7,1 1.5,6.5 1.5,13.5 C1.5,23 14,37 14,37 C14,37 26.5,23 26.5,13.5 C26.5,6.5 21,1 14,1 Z" ' +
+                        'fill="#e8b54a" stroke="#3a1206" stroke-width="1.5"/>' +
+                        '<circle cx="14" cy="13.5" r="5" fill="#2a0730"/></svg>',
+                    iconSize: [28, 38],
+                    iconAnchor: [14, 37],
+                    tooltipAnchor: [0, 1]
+                });
+
                 data.points.forEach(function (marker) {
                     var latLng = [marker.loc[0], marker.loc[1]];
-                    var ciudadIcon = L.icon({
-                        iconUrl: 'images/CiudadGrande.png',
-                        iconSize: [50, 50]
-                    });
-                    var leafletMarker = L.marker(latLng, { icon: ciudadIcon }).addTo(map);
+                    var leafletMarker = L.marker(latLng, { icon: cityIcon }).addTo(map);
                     currentMarkers.push(leafletMarker);
 
-                    // Set the tooltip to show the content of the `link` field
-                    if (marker.tooltip === "hover") {
+                    // Nombre de la ciudad: etiqueta permanente y siempre legible
+                    if (marker.link) {
                         leafletMarker.bindTooltip(marker.link, {
-                            permanent: false,
-                            direction: 'auto'
+                            permanent: true,
+                            direction: 'bottom',
+                            className: 'city-label',
+                            offset: [0, 6]
                         });
                     }
                 });
