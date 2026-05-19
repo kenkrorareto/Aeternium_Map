@@ -71,16 +71,21 @@ function loadMap(mapName) {
         .then(response => response.json())
         .then(data => {
             if (Array.isArray(data.points)) {
-                // Pin de ciudad generado por código: SVG nítido y escalable
+                // Icono de ciudad: perfil de torres almenadas (SVG nítido y escalable)
                 var cityIcon = L.divIcon({
                     className: 'city-marker',
-                    html: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="34" viewBox="0 0 24 34">' +
-                        '<path d="M12,1 C6,1 1.5,5.5 1.5,11.5 C1.5,20 12,33 12,33 C12,33 22.5,20 22.5,11.5 C22.5,5.5 18,1 12,1 Z" ' +
-                        'fill="#e8b54a" stroke="#2a0730" stroke-width="2"/>' +
-                        '<circle cx="12" cy="11.5" r="4" fill="#2a0730"/></svg>',
-                    iconSize: [24, 34],
-                    iconAnchor: [12, 33],
-                    tooltipAnchor: [0, -32]
+                    html: '<svg xmlns="http://www.w3.org/2000/svg" width="34" height="32" viewBox="0 0 34 32">' +
+                        '<path d="M2,29 L2,21 L4,21 L4,10 L6.5,10 L6.5,12 L8.5,12 L8.5,10 L11,10 L11,21 ' +
+                        'L13,21 L13,4 L16,4 L16,6 L18,6 L18,4 L21,4 L21,21 L23,21 L23,13 L25.5,13 ' +
+                        'L25.5,15 L27.5,15 L27.5,13 L30,13 L30,21 L32,21 L32,29 Z" ' +
+                        'fill="#e8b54a" stroke="#2a0730" stroke-width="1.5" stroke-linejoin="round"/>' +
+                        '<path d="M14.5,29 L14.5,25 Q17,21.5 19.5,25 L19.5,29 Z" fill="#2a0730"/>' +
+                        '<rect x="6.6" y="15" width="2.2" height="2.6" fill="#2a0730"/>' +
+                        '<rect x="15.9" y="10" width="2.2" height="2.6" fill="#2a0730"/>' +
+                        '<rect x="25.3" y="17" width="2.2" height="2.6" fill="#2a0730"/></svg>',
+                    iconSize: [34, 32],
+                    iconAnchor: [17, 29],
+                    tooltipAnchor: [0, -25]
                 });
 
                 data.points.forEach(function (marker) {
